@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from 'react'
 
+
+// BE CAREFUL WHEN SENDING TOO MANY REQUESTS
+
+
 function App() {
 
   const [data, setData] = useState([{}])
 
   useEffect(() => {
-    fetch("/data").then(
+    fetch("/test").then(
       res => res.json()
     ).then(
       data => {
+        console.log(data)
         setData(data)
       }
     )
@@ -20,8 +25,7 @@ function App() {
       {(typeof data.players === 'undefined') ? (
         <p>Loading...</p>
       ) : (
-        // <p>{JSON.stringify(data.players, null, "")}</p>
-        <pre>{JSON.stringify(data.players, null, "  ")}</pre>
+        <p>{data}</p>
       )}
 
     </div>

@@ -12,6 +12,7 @@ class Scraper:
     def __init__(self, parser):
         self.parser = parser
 
+
     def player_stats_per_game(self, year):
         url = f'{self.BASE_URL}/leagues/NBA_{year}_per_game.html'
         response = requests.get(url)
@@ -26,10 +27,4 @@ class Scraper:
 
         player_stats_df = pandas.DataFrame.from_dict(stats_data)
         
-        # return player_stats_df
-        
-    
-print('\n'*100)
-
-s = Scraper(parser=parsing.Parser())
-s.player_stats_per_game(year=2023)
+        return player_stats_df.to_dict('records')
