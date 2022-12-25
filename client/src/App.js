@@ -9,23 +9,23 @@ function App() {
   const [data, setData] = useState([{}])
 
   useEffect(() => {
-    fetch("/test").then(
+    fetch("/per_game_averages/2023").then(
       res => res.json()
     ).then(
       data => {
-        console.log(data)
         setData(data)
+        console.log(data)
       }
     )
   }, [])
 
   return (
     <div>
-      
-      {(typeof data.players === 'undefined') ? (
-        <p>Loading...</p>
+
+      {(typeof data.per_game_averages === 'undefined') ? (
+        <p>Loading Data...</p>
       ) : (
-        <p>{data}</p>
+        <pre>{JSON.stringify(data.per_game_averages, null, " ")}</pre>
       )}
 
     </div>
