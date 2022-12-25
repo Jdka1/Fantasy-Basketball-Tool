@@ -1,6 +1,5 @@
 https://fantasy.espn.com/basketball/players/projections
 https://www.espn.com/nba/injuries
+
 https://github.com/KengoA/fantasy-basketball
-https://www.basketball-reference.com/boxscores/?month=12&day=20&year=2022
-https://dashboard.scraperapi.com/signup
 https://github.com/jaebradley/basketball_reference_web_scraper/blob/v4/basketball_reference_web_scraper/http_service.py
